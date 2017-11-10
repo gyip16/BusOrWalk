@@ -1,0 +1,6 @@
+framework module Pods_BusOrWalkTests {
+  umbrella header "Pods-BusOrWalkTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
