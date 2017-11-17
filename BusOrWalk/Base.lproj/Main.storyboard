@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,40 +19,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bus No." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yL2-E3-uZ5">
-                                <rect key="frame" x="87" y="85" width="145" height="20"/>
+                                <rect key="frame" x="96" y="84" width="127" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Station" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxI-2X-D2B">
-                                <rect key="frame" x="87" y="151" width="145" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination Stop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CxI-2X-D2B">
+                                <rect key="frame" x="96" y="150" width="127" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UTB-b1-SYq">
-                                <rect key="frame" x="87" y="179" width="145" height="30"/>
+                                <rect key="frame" x="96" y="179" width="127" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="DestStopPicker:" destination="BYZ-38-t0r" eventType="touchDown" id="RPD-dI-q01"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WAIT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNm-Rx-lFE">
-                                <rect key="frame" x="87" y="219" width="145" height="43"/>
+                                <rect key="frame" x="96" y="219" width="127" height="43"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                 <color key="textColor" red="1" green="0.082892873419171398" blue="0.12251226933390635" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k5D-26-UKk">
-                                <rect key="frame" x="87" y="46" width="145" height="30"/>
+                                <rect key="frame" x="96" y="46" width="127" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="BusStopChange:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="a7T-tG-Map"/>
+                                    <action selector="BusStopEdit:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="PCe-ia-UhL"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5sk-AH-onU">
-                                <rect key="frame" x="87" y="113" width="145" height="30"/>
+                                <rect key="frame" x="96" y="112" width="127" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -61,31 +65,31 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bus Stop No." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76F-pT-A7R">
-                                <rect key="frame" x="87" y="19" width="145" height="20"/>
+                                <rect key="frame" x="96" y="18" width="127" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to Next Destination:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQF-Vl-72V">
-                                <rect key="frame" x="26" y="298" width="193" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to Destination:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQF-Vl-72V">
+                                <rect key="frame" x="17" y="299" width="206" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOM-Mu-nFo">
-                                <rect key="frame" x="141.5" y="269.5" width="91" height="21"/>
+                                <rect key="frame" x="132.5" y="269.5" width="91" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Bus ETA:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tC-nn-9E6">
-                                <rect key="frame" x="26" y="270" width="108" height="21"/>
+                                <rect key="frame" x="17" y="270" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzO-0T-lfk">
-                                <rect key="frame" x="0.0" y="290" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="291" width="320" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8bC-Xf-vdC" id="maO-TB-E0k"/>
                                     <outlet property="delegate" destination="8bC-Xf-vdC" id="Ofx-6U-20t"/>
@@ -124,13 +128,14 @@
                             <constraint firstItem="pQF-Vl-72V" firstAttribute="top" secondItem="8tC-nn-9E6" secondAttribute="top" constant="29" id="d6p-HY-FaW"/>
                             <constraint firstItem="5sk-AH-onU" firstAttribute="top" secondItem="yL2-E3-uZ5" secondAttribute="bottom" constant="8" id="etI-Sz-bXz"/>
                             <constraint firstItem="k5D-26-UKk" firstAttribute="trailing" secondItem="76F-pT-A7R" secondAttribute="trailing" id="fcb-ia-oGu"/>
-                            <constraint firstItem="pQF-Vl-72V" firstAttribute="trailing" secondItem="8tC-nn-9E6" secondAttribute="trailing" constant="86" id="g4t-Fg-4Lu"/>
+                            <constraint firstItem="pQF-Vl-72V" firstAttribute="trailing" secondItem="8tC-nn-9E6" secondAttribute="trailing" constant="98" id="g4t-Fg-4Lu"/>
                             <constraint firstItem="k5D-26-UKk" firstAttribute="leading" secondItem="76F-pT-A7R" secondAttribute="leading" id="g6j-P8-jPl"/>
                             <constraint firstItem="UTB-b1-SYq" firstAttribute="centerX" secondItem="76F-pT-A7R" secondAttribute="centerX" id="gAk-8l-66H"/>
                             <constraint firstItem="UTB-b1-SYq" firstAttribute="top" secondItem="CxI-2X-D2B" secondAttribute="bottom" constant="8" id="gVK-bI-npm"/>
                             <constraint firstItem="IOM-Mu-nFo" firstAttribute="top" secondItem="dNm-Rx-lFE" secondAttribute="bottom" constant="8" symbolic="YES" id="gqf-gt-ISh"/>
                             <constraint firstItem="IOM-Mu-nFo" firstAttribute="trailing" secondItem="dNm-Rx-lFE" secondAttribute="trailing" id="hel-qs-GHv"/>
                             <constraint firstItem="CxI-2X-D2B" firstAttribute="leading" secondItem="76F-pT-A7R" secondAttribute="leading" id="iF3-zQ-KSo"/>
+                            <constraint firstItem="pQF-Vl-72V" firstAttribute="leading" secondItem="8tC-nn-9E6" secondAttribute="leading" id="j0n-eB-Vs5"/>
                             <constraint firstItem="5sk-AH-onU" firstAttribute="leading" secondItem="76F-pT-A7R" secondAttribute="leading" id="kOB-Rp-unw"/>
                             <constraint firstItem="5sk-AH-onU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kwN-dQ-A4x"/>
                             <constraint firstItem="dNm-Rx-lFE" firstAttribute="leading" secondItem="76F-pT-A7R" secondAttribute="leading" id="nPV-MM-Nb7"/>
@@ -151,6 +156,7 @@
                         <outlet property="BusNumber" destination="5sk-AH-onU" id="Awe-xK-cJK"/>
                         <outlet property="BusNumberPick" destination="jzO-0T-lfk" id="hgi-g0-VAI"/>
                         <outlet property="BusStopNumber" destination="k5D-26-UKk" id="ARI-BT-zag"/>
+                        <outlet property="DestStop" destination="UTB-b1-SYq" id="lKA-T4-ljc"/>
                         <outlet property="NextBusEtaDisplay" destination="IOM-Mu-nFo" id="2Km-cY-maL"/>
                     </connections>
                 </viewController>
