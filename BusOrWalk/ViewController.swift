@@ -56,7 +56,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     /* When Starting Bus Stop Text Field has been edited */
     @IBAction func BusStopChange(_ sender: UITextField) {
         //NextBusEtaDisplay.text = "531";
-        
+        callBusStop()
+        if(!pickerBusDataSource.isEmpty) {
+            disableBothStopField()
+        }
+    }
+    
+    func callBusStop() {
         if(checkNetwork()) {
             
             let parameters: Parameters = [
@@ -71,26 +77,24 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             if(!BusStopNumber.text!.isEmpty) {
                 Alamofire.request(httpsStopRequests
                     + BusStopNumber.text!, parameters: parameters, headers: headers).validate().responseJSON { response in
-                    switch response.result {
-                    case .success(let value):
+                        switch response.result {
+                        case .success(let value):
                             let json = JSON(value)
                             //print("Stop Number Data: \(json)")
                             self.lat = json["Latitude"].doubleValue
                             self.longi = json["Longitude"].doubleValue
                             self.pickerBusDataSource = json["Routes"].stringValue.components(separatedBy: ", ")
                             self.enableBusStopField()
-                    case .failure(let error):
-                        print("busstopchange \(error)")
-                        self.pickerBusDataSource = [String]();
-                    }
+                        case .failure(let error):
+                            print("busstopchange \(error)")
+                            self.pickerBusDataSource = [String]();
+                        }
                 }
             } else {
-                self.pickerBusDataSource = [""]
+                self.pickerBusDataSource = [String]();
             }
         }
-        
     }
-    
     /* when BusNumber field is selected */
     @IBAction func BusNumberPicker(_ sender: Any) {
         //self.pickerDataSource = ["321", "345", "394", "375", "351"]
@@ -237,6 +241,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             print("Internet Connection not Available!")
             NextBusEtaDisplay.text! = ""
             disableBothStopField()
+            BusNumberPick.isHidden = true;
             let alertController = UIAlertController(title: "No Network", message: "No internet connection found. Please try again later.", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alertController.addAction(defaultAction)
